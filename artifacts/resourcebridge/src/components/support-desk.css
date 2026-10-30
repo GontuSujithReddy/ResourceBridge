@@ -1,0 +1,82 @@
+.sd { display:grid; gap:18px; color:#1f2f46 }
+.sd-head { display:flex; justify-content:space-between; align-items:flex-end; gap:18px; flex-wrap:wrap }
+.sd-title { display:flex; gap:14px; align-items:flex-start }
+.sd-agent-illustration { width:68px; height:68px; flex:none; padding:3px; border-radius:16px; background:#e8eff9; box-shadow:inset 0 0 0 1px #d7e0ea }
+.sd-mark { width:40px; height:40px; border-radius:12px; background:#e8eff9; color:#3368bf; display:grid; place-items:center; flex:none }
+.sd-eyebrow { font:600 10px 'IBM Plex Mono',monospace; letter-spacing:1.3px; text-transform:uppercase; color:#3368bf }
+.sd-title h1 { font:800 clamp(28px,3vw,38px) Manrope,sans-serif; letter-spacing:-1.4px; margin:4px 0; color:#1f2f46 }
+.sd-title p { margin:0; color:#63758a; font-size:13px }
+.sd-counter { background:#1f3148; color:#e7edf5; border-radius:12px; padding:14px 18px; display:flex; gap:12px; align-items:center; min-width:170px }
+.sd-counter strong { font:800 28px Manrope,sans-serif; color:#fff }
+.sd-counter span { font:500 9px 'IBM Plex Mono',monospace; letter-spacing:1px; text-transform:uppercase; line-height:1.6 }
+.sd-bar { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap }
+.sd-meta { font:500 10px 'IBM Plex Mono',monospace; letter-spacing:1px; text-transform:uppercase; color:#63758a }
+.sd-tools { display:flex; gap:8px; flex-wrap:wrap; align-items:center }
+.sd-seg { display:inline-flex; background:#e8eef7; border-radius:10px; padding:3px }
+.sd-seg button { border:0; background:transparent; padding:8px 12px; border-radius:8px; font-size:12px; font-weight:700; color:#53677f; cursor:pointer }
+.sd-seg button[aria-pressed="true"] { background:#fbfcfe; color:#1f2f46; box-shadow:0 2px 8px rgba(31,50,76,.1) }
+.sd-seg button:focus-visible,.sd-item:focus-visible { outline:3px solid #7ea3dc; outline-offset:2px }
+.sd-grid { display:grid; grid-template-columns:minmax(260px,.8fr) minmax(0,1.5fr); gap:18px; align-items:start }
+.sd-panel { background:#fbfcfe; border:1px solid #d7e0ea; border-radius:14px; box-shadow:0 5px 20px rgba(31,50,76,.06); overflow:hidden }
+.sd-panel-head { display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border-bottom:1px solid #e4eaf2; font:700 14px Manrope,sans-serif }
+.sd-list { display:grid; max-height:620px; overflow-y:auto }
+.sd-item { text-align:left; border:0; border-bottom:1px solid #edf1f6; border-left:3px solid transparent; background:transparent; padding:13px 16px; cursor:pointer; display:grid; gap:4px; color:inherit; transition:background .15s }
+.sd-item:hover { background:#f2f6fc }
+.sd-item[aria-current="true"] { background:#edf3fc; border-left-color:#3368bf }
+.sd-item-top { display:flex; justify-content:space-between; gap:8px; align-items:center }
+.sd-id { font:500 10px 'IBM Plex Mono',monospace; color:#7890ad }
+.sd-item strong { font-size:14px; color:#1f2f46; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+.sd-item small { font-size:11px; color:#63758a }
+.sd-pill { font:600 9px 'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:.8px; padding:4px 8px; border-radius:100px }
+.sd-pill.open { background:#fbeedb; color:#a8691f }
+.sd-pill.resolved { background:#e5f0e8; color:#477650 }
+.sd-pill.unassigned { background:#e8eff9; color:#365d96 }
+.sd-thread-head { padding:18px 20px; border-bottom:1px solid #e4eaf2; display:flex; justify-content:space-between; gap:12px; align-items:flex-start }
+.sd-thread-head h2 { margin:4px 0; font:800 22px Manrope,sans-serif; color:#1f2f46; word-break:break-word }
+.sd-thread-head small { color:#63758a; font-size:12px }
+.sd-assign { margin:16px 20px 0; display:flex; gap:12px; align-items:center; padding:12px 14px; background:#eef2f8; border:1px solid #d7e0ea; border-radius:10px; font-size:13px }
+.sd-assign .sd-mark { width:32px; height:32px; border-radius:9px }
+.sd-assign strong { display:block; color:#263e5c }
+.sd-assign small { color:#63758a; font-size:11px }
+.sd-msgs { padding:16px 20px; display:grid; gap:10px; max-height:440px; overflow-y:auto }
+.sd-msg { max-width:78%; padding:10px 13px; border-radius:12px; background:#eef2f8; font-size:13px; line-height:1.55; white-space:pre-wrap; word-break:break-word; animation:sd-in .25s ease both }
+.sd-msg.mine { justify-self:end; background:#3368bf; color:#fff }
+.sd-msg-meta { display:block; font:500 9px 'IBM Plex Mono',monospace; text-transform:uppercase; letter-spacing:.8px; opacity:.7; margin-bottom:4px }
+.sd-foot { border-top:1px solid #e4eaf2; padding:14px 20px; display:grid; gap:10px; background:#f7f9fc }
+.sd-note { font-size:12px; color:#63758a; line-height:1.55 }
+.sd-err { font-size:12px; color:#a34432; background:#f5e9e4; border-radius:9px; padding:10px 12px }
+.sd-actions { display:flex; gap:8px; justify-content:flex-end; flex-wrap:wrap }
+.sd-form { padding:18px; display:grid; gap:12px }
+.sd-form label { display:grid; gap:6px; font-size:11px; font-weight:700; color:#53677f }
+.sd-translator { padding:15px 16px; display:grid; gap:11px; border-bottom:1px solid #e4eaf2; background:#f7f9fc }
+.sd-translator-heading { display:flex; align-items:center; gap:10px }
+.sd-translator-heading .sd-mark { width:34px; height:34px; border-radius:10px }
+.sd-translator-heading strong { display:block; color:#1f2f46; font:700 14px Manrope,sans-serif }
+.sd-translator-heading small { display:block; margin-top:2px; color:#63758a; font-size:11px }
+.sd-translator-tabs { width:max-content; max-width:100% }
+.sd-translator-tabs button { padding:7px 10px; font-size:11px }
+.sd-translator-tabs button:disabled { opacity:.5; cursor:not-allowed }
+.sd-translator-field { display:grid; gap:6px; color:#53677f; font-size:11px; font-weight:700 }
+.sd-translator-field textarea { min-height:78px; resize:vertical; font-size:12px }
+.sd-language-picker { display:grid; gap:6px }
+.sd-language-controls { display:grid; grid-template-columns:minmax(0,1fr) minmax(150px,.9fr); gap:8px }
+.sd-language-search { position:relative; display:flex; align-items:center }
+.sd-language-search > svg { position:absolute; left:11px; color:#788ba3; pointer-events:none }
+.sd-language-search .rb-input { flex:1; min-width:0; padding-left:34px; font-size:12px }
+.sd-language-search > .rb-btn { flex:none; padding:8px 10px; font-size:11px }
+.sd-language-controls .rb-select { width:100%; min-width:0; font-size:12px }
+.sd-translation-result { display:grid; gap:8px; padding:11px 12px; border:1px solid #d7e0ea; border-radius:10px; background:#fbfcfe }
+.sd-translation-result-head { display:flex; justify-content:space-between; align-items:center; gap:9px; flex-wrap:wrap; color:#53677f; font-size:11px }
+.sd-translation-result-head strong { color:#1f2f46 }
+.sd-translation-result p { margin:0; white-space:pre-wrap; overflow-wrap:anywhere; color:#263b55; font-size:13px; line-height:1.55 }
+.sd-translation-privacy { margin:0; color:#718096; font-size:10px; line-height:1.45 }
+.sd-notice { min-width:0; padding:12px 16px; border-radius:12px; background:#e8eef7; color:#53677f; font-size:13px; line-height:1.4; display:flex; gap:10px; align-items:center }
+.sd-notice strong { color:#263e5c; display:block }
+.sd-notice-line { min-width:0; overflow:hidden; white-space:nowrap; text-overflow:ellipsis }
+.sd-empty { padding:40px 20px; text-align:center; color:#63758a; font-size:13px }
+.sd-empty h3 { font:700 16px Manrope,sans-serif; color:#1f2f46; margin:10px 0 4px }
+.sd-skel { height:58px; margin:10px 14px; border-radius:10px; background:linear-gradient(90deg,#e8eef5 25%,#f4f7fb 50%,#e8eef5 75%); background-size:200% 100%; animation:shimmer 1.4s infinite }
+@keyframes sd-in { from { opacity:0; transform:translateY(4px) } to { opacity:1; transform:none } }
+@media (max-width:860px) { .sd-grid { grid-template-columns:1fr } .sd-msg { max-width:92% } }
+@media (max-width:520px) { .sd-title { gap:10px } .sd-agent-illustration { width:54px; height:54px } .sd-title p { max-width:36ch } }
+@media (max-width:520px) { .sd-language-controls { grid-template-columns:1fr } .sd-translator-tabs button { padding:7px 8px } .sd-translation-result-head .rb-btn { width:100%; justify-content:center } }

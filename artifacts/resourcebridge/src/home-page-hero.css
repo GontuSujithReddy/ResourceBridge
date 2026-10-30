@@ -1,0 +1,638 @@
+.rb-public.rb-home-public {
+  background-color: #fff !important;
+  background-image:
+    linear-gradient(rgba(42, 62, 88, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 62, 88, 0.09) 1px, transparent 1px) !important;
+  background-position: 0 0 !important;
+  background-repeat: repeat !important;
+  background-size: 72px 72px !important;
+}
+
+.rb-hero.rb-home-centered {
+  width: 100%;
+  max-width: 1370px;
+  margin: 0 auto;
+  padding: 42px clamp(18px, 4vw, 56px) 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+}
+
+.rb-hero.rb-home-centered .rb-home-heading {
+  width: 100%;
+  max-width: 900px;
+}
+
+.rb-hero.rb-home-centered .rb-home-eyebrow {
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.rb-hero.rb-home-centered .rb-home-title {
+  max-width: none;
+  margin: 0;
+  color: #1f2f46;
+  font-size: clamp(42px, 5.4vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.065em;
+}
+
+.rb-hero.rb-home-centered .rb-home-title span {
+  color: var(--rb-primary);
+}
+
+.rb-hero.rb-home-centered .rb-home-tagline {
+  max-width: none;
+  margin: 10px 0 24px;
+  color: #63758a;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.4;
+}
+
+.rb-hero.rb-home-centered.rb-home-photo-story {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  overflow: visible;
+}
+
+.rb-home-sticky-stage {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: 100svh;
+  min-height: 640px;
+  align-items: center;
+  flex-direction: column;
+  padding: 42px clamp(18px, 4vw, 56px) 50px;
+  background: inherit;
+}
+
+.rb-home-photo-frame {
+  position: relative;
+  width: min(100%, 620px);
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  border: 7px solid #fff;
+  border-radius: 20px;
+  background: #eef5fd;
+  box-shadow:
+    0 26px 68px rgba(35, 57, 88, 0.17),
+    0 4px 14px rgba(35, 57, 88, 0.08);
+}
+
+.rb-home-photo-frame::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
+
+.rb-home-photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.rb-home-photo-frame .rb-home-sequence-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #eef5fd;
+}
+
+.rb-home-photo-frame .is-inactive {
+  visibility: hidden;
+}
+
+.rb-home-photo-frame .is-entering,
+.rb-home-photo-frame .is-current {
+  z-index: 2;
+}
+
+.rb-home-photo-load-error {
+  position: absolute;
+  z-index: 5;
+  left: 8px;
+  right: 8px;
+  bottom: 42px;
+  margin: 0;
+  padding: 8px;
+  border-radius: 6px;
+  background: #fff8ef;
+  color: #803e20;
+  font-size: 11px;
+}
+
+.rb-hero.rb-home-centered .rb-home-copy {
+  width: 100%;
+  max-width: 720px;
+  margin-top: 22px;
+}
+
+.rb-hero.rb-home-centered .rb-home-description {
+  max-width: 660px;
+  margin: 0 auto 18px;
+  color: #63758a;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.rb-home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rb-hero.rb-home-centered .rb-home-audience {
+  max-width: none;
+  margin: 14px auto 0;
+  color: #8492a5;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.rb-home-photo-pause {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 5;
+  padding: 6px 10px;
+  border: 1px solid #ffffff80;
+  border-radius: 6px;
+  color: #fff;
+  background: #17283bc9;
+  font: 600 10px/1.3 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+
+.rb-home-category-badge {
+  position: absolute;
+  top: 16px;
+  left: clamp(18px, 4vw, 56px);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 11px 5px 5px;
+  border: 1px solid #dce6f1;
+  border-radius: 10px;
+  background: #ffffffeb;
+  color: #263b55;
+  box-shadow: 0 3px 12px #2339580a;
+  font: 600 11px/1.3 'DM Sans', sans-serif;
+}
+
+.rb-home-category-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 7px;
+  background: #eaf2ff;
+  color: #4277cf;
+}
+
+.rb-home-photo-pause:focus-visible {
+  outline: 3px solid #4c81e8;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rb-home-photo-frame .is-entering {
+    animation: rb-home-photo-enter 600ms cubic-bezier(.22, .65, .3, 1) both;
+  }
+  .rb-home-photo-frame .is-exiting {
+    animation: rb-home-photo-exit 600ms cubic-bezier(.22, .65, .3, 1) both;
+  }
+}
+
+@keyframes rb-home-photo-enter {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes rb-home-photo-exit {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-home-photo-frame .is-exiting { visibility: hidden; }
+}
+
+@media (max-width: 640px) {
+  .rb-hero.rb-home-centered {
+    padding: 34px 18px 42px;
+  }
+
+  .rb-home-sticky-stage {
+    padding: 34px 18px 38px;
+  }
+
+  .rb-hero.rb-home-centered .rb-home-title {
+    font-size: clamp(40px, 11vw, 56px);
+    letter-spacing: -0.06em;
+  }
+
+  .rb-hero.rb-home-centered .rb-home-tagline {
+    margin: 8px 0 18px;
+  }
+
+  .rb-home-photo-frame {
+    border-width: 5px;
+    border-radius: 15px;
+  }
+
+  .rb-hero.rb-home-centered .rb-home-copy {
+    margin-top: 18px;
+  }
+}
+
+/* Public landing page: a bright, local doorway that follows the reference cut.
+   These rules intentionally stay inside the homepage shell. */
+.rb-public.rb-home-public {
+  min-height: 100dvh;
+  --rb-home-nav-height: 48px;
+  color: #17191d !important;
+  background-color: #fff !important;
+  background-image:
+    linear-gradient(rgba(43, 58, 74, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 58, 74, .075) 1px, transparent 1px) !important;
+  background-position: 0 0 !important;
+  background-size: 72px 72px !important;
+}
+
+.rb-home-public .rb-home-nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  max-width: none;
+  height: var(--rb-home-nav-height);
+  margin: 0;
+  padding: 0 clamp(18px, 3.2vw, 36px);
+  border-bottom: 1px solid rgba(22, 32, 44, .12);
+  background: rgba(255, 255, 255, .96) !important;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.rb-home-public .rb-home-nav .rb-brand {
+  display: inline-flex;
+  justify-self: start;
+  gap: 8px;
+  padding: 0;
+}
+
+.rb-home-public .rb-home-nav .rb-brand-image {
+  width: 34px;
+  height: 30px;
+  padding: 0;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+}
+
+.rb-home-public .rb-home-nav .rb-brand-copy {
+  display: flex;
+  gap: 0;
+}
+
+.rb-home-public .rb-home-nav .rb-brand-name {
+  color: #1b2736;
+  font: 700 14px/1.1 'DM Sans', sans-serif;
+  letter-spacing: -.35px;
+}
+
+.rb-home-public .rb-home-nav .rb-brand-tagline {
+  display: none;
+}
+
+.rb-home-public .rb-home-nav .rb-public-links {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(16px, 2.2vw, 27px);
+  color: #262b32 !important;
+  font: 500 10px/1 'DM Sans', sans-serif;
+}
+
+.rb-home-public .rb-home-nav .rb-public-links a {
+  position: relative;
+  padding: 7px 0;
+  color: inherit !important;
+  transition: color .18s ease;
+}
+
+.rb-home-public .rb-home-nav .rb-public-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: #4c81e8;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease;
+}
+
+.rb-home-public .rb-home-nav .rb-public-links a:hover,
+.rb-home-public .rb-home-nav .rb-public-links a.is-current {
+  color: #3974dd !important;
+}
+
+.rb-home-public .rb-home-nav .rb-public-links a:hover::after,
+.rb-home-public .rb-home-nav .rb-public-links a.is-current::after {
+  transform: scaleX(1);
+}
+
+.rb-home-public .rb-home-nav .rb-home-nav-join {
+  justify-self: end;
+  min-height: 27px;
+  padding: 6px 10px;
+  border: 1px solid #26354a !important;
+  border-radius: 5px;
+  background: #4c81e8 !important;
+  color: #fff !important;
+  box-shadow: 1px 2px 0 #24344a;
+  font: 600 9px/1 'DM Sans', sans-serif;
+}
+
+.rb-home-public .rb-home-nav .rb-home-nav-join:hover,
+.rb-home-public .rb-home-bottom-join:hover {
+  background: #346ed7 !important;
+}
+
+.rb-home-public .rb-home-sticky-stage {
+  position: relative;
+  top: 0;
+  height: calc(100svh - var(--rb-home-nav-height));
+  min-height: min(640px, calc(100svh - var(--rb-home-nav-height)));
+  padding: 48px clamp(18px, 4vw, 56px) 42px;
+  background: transparent;
+}
+
+.rb-home-public .rb-home-photo-frame {
+  width: min(100%, 520px);
+  border: 5px solid #fff;
+  border-radius: 13px;
+  box-shadow: 0 8px 28px rgba(35, 57, 88, 0.11);
+}
+
+.rb-home-public .rb-home-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.rb-home-public .rb-home-greeting {
+  min-height: 48px;
+  margin: 0 0 13px;
+  color: #4c81e8 !important;
+  font: 600 clamp(30px, 4.1vw, 43px)/1.18 'DM Sans', 'Noto Sans Devanagari', 'Noto Sans Telugu', sans-serif;
+  letter-spacing: .015em;
+  text-align: center;
+}
+
+.rb-home-public .rb-home-title {
+  margin: 0 0 18px !important;
+  color: #17191d !important;
+  font: 800 clamp(37px, 5vw, 52px)/1.04 'DM Sans', 'Manrope', sans-serif !important;
+  letter-spacing: -.055em !important;
+}
+
+.rb-home-public .rb-home-title span {
+  color: #dd5266 !important;
+}
+
+.rb-home-public .rb-home-copy {
+  display: none;
+}
+
+.rb-home-public .rb-home-bottomline {
+  position: absolute;
+  right: clamp(18px, 4vw, 56px);
+  bottom: 19px;
+  left: clamp(18px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 12px;
+}
+
+.rb-home-public .rb-home-location {
+  display: grid;
+  justify-self: start;
+  gap: 2px;
+  color: #354252;
+  font: 500 8px/1.25 'DM Sans', sans-serif;
+  letter-spacing: .015em;
+}
+
+.rb-home-public .rb-home-location strong {
+  color: #496b9e;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.rb-home-public .rb-home-bottom-join {
+  min-width: 110px;
+  min-height: 29px;
+  padding: 7px 13px;
+  border: 1px solid #24364f !important;
+  border-radius: 5px;
+  background: #4c81e8 !important;
+  color: #fff !important;
+  box-shadow: 1px 2px 0 #24344a;
+  font: 600 10px/1 'DM Sans', sans-serif;
+}
+
+.rb-home-public .rb-home-bottom-join svg {
+  width: 11px;
+  height: 11px;
+}
+
+.rb-home-public .rb-home-signature {
+  display: flex;
+  justify-self: end;
+  align-items: center;
+  gap: 6px;
+  color: #273345;
+  text-align: left;
+}
+
+.rb-home-public .rb-home-signature img {
+  display: block;
+  width: 27px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.rb-home-public .rb-home-signature span {
+  display: grid;
+  gap: 2px;
+}
+
+.rb-home-public .rb-home-signature strong {
+  color: #273345;
+  font: 700 10px/1.1 'DM Sans', sans-serif;
+}
+
+.rb-home-public .rb-home-signature small {
+  color: #617182;
+  font: 500 5px/1.15 'DM Sans', sans-serif;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-home-public .rb-home-nav .rb-public-links a::after {
+    transition: none;
+  }
+  .rb-home-public .rb-home-greeting {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .rb-public.rb-home-public {
+    --rb-home-nav-height: 68px;
+  }
+
+  .rb-home-public .rb-home-nav {
+    height: 68px !important;
+    position: sticky;
+    top: 0;
+    display: grid;
+    padding: 7px 16px 6px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 30px 20px;
+    row-gap: 3px;
+  }
+
+  .rb-home-public .rb-home-nav .rb-brand {
+    flex-direction: row !important;
+    align-items: center;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .rb-home-public .rb-home-nav .rb-brand-image {
+    width: 30px;
+    height: 27px;
+  }
+
+  .rb-home-public .rb-home-nav .rb-brand-name {
+    font-size: 13px;
+  }
+
+  .rb-home-public .rb-home-nav .rb-home-nav-join {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .rb-home-public .rb-home-nav .rb-public-links {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    left: 0;
+    display: flex !important;
+    visibility: visible !important;
+    justify-content: center;
+    gap: clamp(14px, 5vw, 25px);
+    font-size: 9px;
+  }
+
+  .rb-home-public .rb-home-nav .rb-public-links a:not(.rb-btn) {
+    display: inline-flex !important;
+    visibility: visible !important;
+  }
+
+  .rb-home-public .rb-home-sticky-stage {
+    top: 0;
+    height: calc(100svh - var(--rb-home-nav-height));
+    min-height: min(640px, calc(100svh - var(--rb-home-nav-height)));
+    padding: 40px 18px 38px;
+  }
+
+  .rb-home-public .rb-home-greeting {
+    min-height: 40px;
+    margin-bottom: 9px;
+    font-size: clamp(29px, 9vw, 38px);
+  }
+
+  .rb-home-public .rb-home-title {
+    margin-bottom: 15px !important;
+    font-size: clamp(34px, 9.2vw, 47px) !important;
+    letter-spacing: -.06em !important;
+  }
+
+  .rb-home-public .rb-home-bottomline {
+    right: 16px;
+    bottom: 18px;
+    left: 16px;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 6px;
+  }
+
+  .rb-home-public .rb-home-location strong {
+    max-width: 104px;
+  }
+
+  .rb-home-public .rb-home-signature {
+    gap: 4px;
+  }
+
+  .rb-home-public .rb-home-signature img {
+    width: 21px;
+    height: 19px;
+  }
+
+  .rb-home-public .rb-home-signature strong {
+    font-size: 8px;
+  }
+
+  .rb-home-public .rb-home-signature small {
+    max-width: 108px;
+    font-size: 4px;
+  }
+
+  .rb-home-public .rb-home-bottom-join {
+    min-width: 86px;
+    padding: 7px 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .rb-home-public .rb-home-nav .rb-public-links {
+    gap: 11px;
+    font-size: 8px;
+  }
+
+  .rb-home-public .rb-home-location {
+    font-size: 7px;
+  }
+
+  .rb-home-public .rb-home-location strong {
+    max-width: 82px;
+    font-size: 9px;
+  }
+}

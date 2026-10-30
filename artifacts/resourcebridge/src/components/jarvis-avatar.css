@@ -1,0 +1,81 @@
+/* Separate layers keep facial gestures independent from the three-second blink. */
+.rb-jarvis-avatar {
+  overflow: visible;
+}
+
+.rb-jarvis-breath {
+  transform-origin: 80px 65px;
+  animation: rb-jarvis-breathe 4.8s ease-in-out infinite;
+}
+
+.rb-jarvis-head {
+  transform-origin: 80px 70px;
+  animation: rb-jarvis-curious-tilt 11s ease-in-out infinite;
+}
+
+.rb-jarvis-eye-gaze {
+  animation: rb-jarvis-look-around 9s ease-in-out infinite;
+}
+
+.rb-jarvis-eye-catchlight {
+  opacity: .55;
+  animation: rb-jarvis-eye-shimmer 4.8s ease-in-out infinite;
+}
+
+.rb-jarvis-smile {
+  transform-origin: 80px 72px;
+  animation: rb-jarvis-soft-smile 7s ease-in-out infinite;
+}
+
+.rb-jarvis-blinking-eyes {
+  animation: rb-jarvis-eye-blink 3s ease-in-out infinite;
+  transform-origin: 0 0;
+}
+
+@keyframes rb-jarvis-breathe {
+  0%, 100% { transform: translateY(1px) scale(1); }
+  50% { transform: translateY(-4px) scale(1.025, 1.035); }
+}
+
+@keyframes rb-jarvis-curious-tilt {
+  0%, 22%, 48%, 78%, 100% { transform: rotate(0); }
+  32%, 38% { transform: rotate(-5deg); }
+  63%, 68% { transform: rotate(4deg); }
+}
+
+@keyframes rb-jarvis-look-around {
+  0%, 16%, 42%, 68%, 100% { transform: translate(0, 0); }
+  23%, 33% { transform: translate(-4px, -1px); }
+  51%, 59% { transform: translate(4px, 1px); }
+  80%, 88% { transform: translate(0, -2px); }
+}
+
+@keyframes rb-jarvis-eye-shimmer {
+  0%, 100% { opacity: .4; }
+  50% { opacity: .8; }
+}
+
+@keyframes rb-jarvis-soft-smile {
+  0%, 30%, 100% { opacity: .45; transform: scaleX(.8); }
+  55%, 75% { opacity: .85; transform: scaleX(1.12); }
+}
+
+@keyframes rb-jarvis-eye-blink {
+  0%, 93%, 100% {
+    transform: translateY(50.5px) scaleY(1) translateY(-50.5px);
+  }
+  96.5% {
+    transform: translateY(50.5px) scaleY(.06) translateY(-50.5px);
+  }
+}
+
+/* Keep the explicitly requested blink; quiet the optional ambient motion. */
+@media (prefers-reduced-motion: reduce) {
+  .rb-jarvis-breath,
+  .rb-jarvis-head,
+  .rb-jarvis-eye-gaze,
+  .rb-jarvis-eye-catchlight,
+  .rb-jarvis-smile {
+    animation: none;
+  }
+}

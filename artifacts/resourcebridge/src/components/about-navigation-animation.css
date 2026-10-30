@@ -1,0 +1,86 @@
+.rb-nav-reveal[data-section="about"] {
+  overflow:hidden;
+  background:radial-gradient(ellipse at 50% 45%,#dbe9f8 0%,#e9f0f8 43%,#f2f5f8 100%);
+  animation:rb-about-wash 4s ease both;
+}
+.rb-about-motion {
+  position:relative;width:300px;height:250px;perspective:900px;isolation:isolate;
+  animation:rb-about-reveal 4s cubic-bezier(.2,.75,.25,1) both;
+}
+.rb-about-aura {
+  position:absolute;inset:2px -9px;border-radius:50%;
+  background:radial-gradient(ellipse,#79a9df52 0%,#a4c7eb24 45%,transparent 73%);
+  animation:rb-about-aura 4s ease both;
+}
+.rb-about-stage { position:absolute;inset:0;transform-style:preserve-3d }
+.rb-about-platform {
+  position:absolute;left:42px;right:42px;bottom:10px;height:80px;border-radius:50%;
+  transform:rotateX(68deg);background:radial-gradient(ellipse,#4b7fbd3c,#a0c4e51c 52%,transparent 72%);
+}
+.rb-about-platform i {
+  position:absolute;inset:8px;border:1px solid #5e91c75e;border-radius:50%;
+  animation:rb-about-ring 4s ease both;
+}
+.rb-about-platform i:nth-child(2) { inset:21px;animation-delay:100ms }
+.rb-about-platform i:nth-child(3) { inset:34px;animation-delay:200ms }
+.rb-about-paths {
+  position:absolute;inset:0;width:100%;height:100%;overflow:visible;
+  fill:none;stroke:#6293c8;stroke-width:1.5;stroke-linecap:round;
+}
+.rb-about-paths path { stroke-dasharray:130;stroke-dashoffset:130;animation:rb-about-connect 4s ease both }
+.rb-about-paths path:nth-child(2) { animation-delay:70ms }
+.rb-about-paths path:nth-child(3) { animation-delay:140ms }
+.rb-about-paths circle { stroke:#78a6d14b;stroke-dasharray:3 9 }
+.rb-about-core {
+  position:absolute;left:110px;top:83px;width:80px;height:80px;transform-style:preserve-3d;
+  animation:rb-about-float 4s ease-in-out both;
+}
+.rb-about-core-turn { position:absolute;inset:0;transform-style:preserve-3d;animation:rb-about-turn 4s cubic-bezier(.3,.65,.25,1) both }
+.rb-about-core-face {
+  position:absolute;inset:0;display:grid;place-items:center;border:1px solid #dcecff;border-radius:19px;
+  background:linear-gradient(145deg,#78afe4 0%,#3c75ba 58%,#2b5797 100%);color:#fff;
+  box-shadow:inset 0 0 19px #e2f2ff4d,0 14px 26px #315f9633;backface-visibility:hidden;
+}
+.rb-about-core-face svg { filter:drop-shadow(0 2px 4px #183d6b66) }
+.rb-about-core-front { transform:translateZ(18px) }
+.rb-about-core-back { transform:rotateY(180deg) translateZ(18px);background:linear-gradient(145deg,#e5f0fb,#a9c8e8);color:#37679e }
+.rb-about-resource {
+  position:absolute;width:50px;height:58px;display:grid;justify-items:center;align-content:center;gap:4px;
+  border:1px solid #fff;border-radius:15px;background:linear-gradient(145deg,#ffffffed,#dceafb);
+  box-shadow:4px 7px 0 #8cadd033,0 12px 22px #305b8e25,inset 0 1px 0 #fff;
+  color:#3e70aa;transform-style:preserve-3d;
+}
+.rb-about-resource span { width:22px;height:3px;border-radius:4px;background:#a0bcdb }
+.rb-about-resource-left { left:41px;top:42px;animation:rb-about-resource-left 4s cubic-bezier(.2,.7,.2,1) both }
+.rb-about-resource-top { left:125px;top:4px;animation:rb-about-resource-top 4s cubic-bezier(.2,.7,.2,1) both;animation-delay:80ms }
+.rb-about-resource-right { right:41px;top:42px;animation:rb-about-resource-right 4s cubic-bezier(.2,.7,.2,1) both;animation-delay:160ms }
+.rb-about-orbit { position:absolute;left:50%;top:50%;width:195px;height:195px;margin:-97.5px;border:1px solid #5e92cc52;border-radius:50%;transform-style:preserve-3d }
+.rb-about-orbit-a { transform:rotateX(68deg) rotateZ(-20deg);animation:rb-about-orbit 4s linear both }
+.rb-about-orbit-b { width:224px;height:224px;margin:-112px;border-style:dashed;border-color:#7da5d445;transform:rotateY(66deg) rotateZ(22deg);animation:rb-about-orbit 4s linear reverse both }
+.rb-about-light {
+  position:absolute;left:148px;top:122px;width:4px;height:4px;border-radius:50%;
+  background:#fff;box-shadow:0 0 9px 3px #6ca6e6a6;
+  animation:rb-about-light 4s ease-out both;
+}
+.rb-about-light-0 { --about-angle:0deg }
+.rb-about-light-1 { --about-angle:40deg;animation-delay:30ms }
+.rb-about-light-2 { --about-angle:80deg;animation-delay:60ms }
+.rb-about-light-3 { --about-angle:120deg;animation-delay:90ms }
+.rb-about-light-4 { --about-angle:160deg;animation-delay:120ms }
+.rb-about-light-5 { --about-angle:200deg;animation-delay:150ms }
+.rb-about-light-6 { --about-angle:240deg;animation-delay:180ms }
+.rb-about-light-7 { --about-angle:280deg;animation-delay:210ms }
+.rb-about-light-8 { --about-angle:320deg;animation-delay:240ms }
+@keyframes rb-about-wash { 0%,3% { opacity:0 } 10%,82% { opacity:1 } 100% { opacity:0 } }
+@keyframes rb-about-reveal { 0%,3% { opacity:0;transform:translateY(38px) scale(.55) rotateX(-12deg) } 16% { opacity:1;transform:translateY(-4px) scale(1.04) rotateX(3deg) } 25%,78% { opacity:1;transform:translateY(0) scale(1) rotateX(0) } 100% { opacity:0;transform:translate(36px,-28px) scale(.68) rotateY(28deg) } }
+@keyframes rb-about-aura { 0%,100% { opacity:0;transform:scale(.55) } 28% { opacity:.8;transform:scale(1) } 65% { opacity:1;transform:scale(1.12) } }
+@keyframes rb-about-ring { 0% { opacity:0;transform:scale(.35) } 32%,72% { opacity:.8;transform:scale(1) } 100% { opacity:0;transform:scale(1.4) } }
+@keyframes rb-about-connect { 0%,12% { stroke-dashoffset:130;opacity:0 } 40%,76% { stroke-dashoffset:0;opacity:.85 } 100% { stroke-dashoffset:-130;opacity:0 } }
+@keyframes rb-about-float { 0%,25%,78%,100% { transform:translateY(0) } 48% { transform:translateY(-12px) } 67% { transform:translateY(-5px) } }
+@keyframes rb-about-turn { 0% { transform:rotateX(-24deg) rotateY(-68deg) scale(.6) } 25% { transform:rotateX(-12deg) rotateY(12deg) scale(1) } 58% { transform:rotateX(12deg) rotateY(195deg) scale(1.08) } 82% { transform:rotateX(-6deg) rotateY(340deg) scale(1) } 100% { transform:rotateX(-20deg) rotateY(415deg) scale(.7) } }
+@keyframes rb-about-resource-left { 0%,8% { opacity:0;transform:translate3d(-40px,24px,-30px) rotateY(-55deg) scale(.4) } 30%,76% { opacity:1;transform:translate3d(0,0,20px) rotateY(8deg) scale(1) } 100% { opacity:0;transform:translate3d(-26px,-34px,-55px) rotateY(-35deg) scale(.3) } }
+@keyframes rb-about-resource-top { 0%,12% { opacity:0;transform:translate3d(0,-40px,-35px) rotateX(45deg) scale(.3) } 34%,76% { opacity:1;transform:translate3d(0,0,25px) rotateX(-8deg) scale(1) } 100% { opacity:0;transform:translate3d(28px,-40px,-60px) rotateX(50deg) scale(.25) } }
+@keyframes rb-about-resource-right { 0%,15% { opacity:0;transform:translate3d(40px,24px,-30px) rotateY(55deg) scale(.35) } 37%,76% { opacity:1;transform:translate3d(0,0,15px) rotateY(-8deg) scale(1) } 100% { opacity:0;transform:translate3d(30px,-33px,-65px) rotateY(40deg) scale(.3) } }
+@keyframes rb-about-orbit { from { rotate:0deg } to { rotate:360deg } }
+@keyframes rb-about-light { 0%,22% { opacity:0;transform:rotate(var(--about-angle)) translateX(10px) scale(.2) } 48% { opacity:1;transform:rotate(var(--about-angle)) translateX(90px) scale(1) } 78% { opacity:.7;transform:rotate(var(--about-angle)) translateX(118px) scale(.5) } 100% { opacity:0;transform:rotate(var(--about-angle)) translateX(140px) scale(.1) } }
+@media(max-width:420px) { .rb-about-motion { transform:scale(.86) } }

@@ -1,0 +1,141 @@
+.rb-care-motion {
+  position:relative;width:280px;height:265px;perspective:850px;isolation:isolate;
+  animation:rb-care-arrive 4s cubic-bezier(.22,.7,.24,1) both;
+}
+.rb-care-aura {
+  position:absolute;inset:-12px;border-radius:50%;background:radial-gradient(ellipse,#93d0ff66,#b9d4ff26 45%,transparent 70%);
+  animation:rb-care-aura 4s ease both;
+}
+.rb-care-platform {
+  position:absolute;left:35px;bottom:9px;width:210px;height:90px;border-radius:50%;transform:rotateX(60deg);
+  background:radial-gradient(ellipse,#416da344,transparent 67%);
+}
+.rb-care-platform i { position:absolute;inset:0;border:1px solid #80b3e863;border-radius:50%;animation:rb-care-platform 4s ease both }
+.rb-care-platform i:nth-child(2) { inset:16%;animation-delay:150ms }
+.rb-care-platform i:nth-child(3) { inset:32%;animation-delay:300ms }
+.rb-care-headset {
+  position:absolute;left:62px;top:45px;width:156px;height:153px;transform-style:preserve-3d;
+  animation:rb-care-headset-float 4s ease-in-out both;
+}
+.rb-care-headband {
+  position:absolute;left:10px;top:0;width:136px;height:124px;border:15px solid #5080c4;
+  border-bottom:0;border-radius:82px 82px 0 0;box-sizing:border-box;
+  background:transparent;box-shadow:inset 0 3px 0 #e5f3ff,0 -3px 0 #a4c9f5,4px 0 0 #28528d;
+}
+.rb-care-headband span {
+  position:absolute;inset:-9px -9px 0;border:3px solid #9ec8f3;border-bottom:0;border-radius:78px 78px 0 0;
+  box-shadow:inset 0 2px 0 #ffffff63;
+}
+.rb-care-ear {
+  position:absolute;top:75px;width:32px;height:65px;border-radius:15px;
+  background:linear-gradient(110deg,#a7ccef,#fbfdff 32%,#87b0e2 80%,#4d7db5);
+  border:1px solid #d6ecff;box-shadow:2px 6px 0 #315d963b,0 8px 13px #28528438;
+  transform:translateZ(8px);
+}
+.rb-care-ear-left { left:0;rotate:-6deg;--care-ear-fold:38px;--care-ear-angle:65deg }
+.rb-care-ear-right { right:0;rotate:6deg;--care-ear-fold:-38px;--care-ear-angle:-65deg }
+.rb-care-ear { animation:rb-care-ear-close 4s ease-in-out both }
+.rb-care-headband { transform-origin:50% 80%;animation:rb-care-headband-close 4s ease-in-out both }
+.rb-care-voice-orb { animation:rb-care-orb-close 4s ease both }
+.rb-care-mic-arm { transform-origin:100% 0;animation:rb-care-mic-close 4s ease both }
+.rb-care-ear i { position:absolute;top:8px;bottom:8px;left:7px;right:3px;background:linear-gradient(90deg,#254975,#467bb8);border-radius:10px;box-shadow:inset 2px 1px 4px #132c5270 }
+.rb-care-ear-right i { left:3px;right:7px }
+.rb-care-voice-orb {
+  position:absolute;left:39px;top:57px;width:78px;height:78px;border-radius:50%;
+  background:radial-gradient(circle at 30% 25%,#8dc7f7aa,#417cc34f 55%,#a5d3f72e);
+  border:1px solid #d2eeffb3;box-shadow:inset 0 1px 8px #eefaffad,0 0 22px #83c9f53b;
+  display:grid;place-items:center;transform:translateZ(-3px);
+}
+.rb-care-equalizer { display:flex;align-items:center;justify-content:center;gap:4px;height:36px }
+.rb-care-equalizer i {
+  width:4px;height:calc(34px * var(--care-height));border-radius:3px;
+  background:linear-gradient(#eefaff,#4b8ad3);box-shadow:0 0 5px #d6f5ff80;
+  animation:rb-care-equalizer 650ms ease-in-out infinite alternate;
+  animation-delay:calc(var(--care-index) * -95ms);
+}
+.rb-care-mic-arm {
+  position:absolute;right:12px;top:118px;width:58px;height:39px;border-right:5px solid #6b99d1;
+  border-bottom:5px solid #6b99d1;border-radius:0 0 32px 0;transform:translateZ(22px) rotate(-6deg);
+  filter:drop-shadow(1px 2px 1px #315d9640);
+}
+.rb-care-mic-arm span {
+  position:absolute;left:-4px;bottom:-9px;width:26px;height:13px;border-radius:9px;
+  background:linear-gradient(#8ab2e5,#315c99);border:1px solid #b2d5fa;box-shadow:inset 0 2px 2px #d4edff77;
+}
+.rb-care-headset-reflection { position:absolute;left:26px;top:9px;width:45px;height:9px;border-radius:50%;background:#eaf8ffa8;filter:blur(3px);transform:rotate(-35deg);animation:rb-care-reflection 4s ease both }
+.rb-care-chat {
+  position:absolute;width:66px;height:55px;border-radius:15px;box-sizing:border-box;padding:10px;color:#467bb9;
+  background:linear-gradient(145deg,#ffffffed,#d7eaffeb);border:1px solid #f5fcff;
+  box-shadow:3px 5px 0 #91b5e04d,0 10px 20px #35619526;animation:rb-care-chat 4s ease-in-out both;
+}
+.rb-care-chat::after { content:"";position:absolute;bottom:-6px;left:12px;width:11px;height:11px;background:#deedfc;rotate:45deg;border-radius:2px }
+.rb-care-chat-one { left:6px;top:42px;rotate:-12deg;--care-fold-x:104px;--care-fold-y:51px }
+.rb-care-chat-two { right:1px;bottom:48px;rotate:10deg;animation-delay:120ms;--care-fold-x:-109px;--care-fold-y:-68px }
+.rb-care-typing { position:absolute;right:9px;bottom:12px;display:flex;gap:3px }
+.rb-care-typing i { width:3px;height:3px;border-radius:50%;background:#719cce;animation:rb-care-typing 800ms ease-in-out infinite alternate }
+.rb-care-typing i:nth-child(2) { animation-delay:-200ms }
+.rb-care-typing i:nth-child(3) { animation-delay:-400ms }
+.rb-care-chat-line { position:absolute;right:9px;top:17px;width:14px;height:3px;border-radius:2px;background:#90b4e0 }
+.rb-care-chat-line.short { top:25px;width:9px }
+.rb-care-sound { position:absolute;top:99px;width:31px;height:56px;overflow:visible;stroke:#71a3d7;stroke-width:1.5;stroke-linecap:round }
+.rb-care-sound-left { left:25px }
+.rb-care-sound-right { right:25px;scale:-1 1 }
+.rb-care-sound path { animation:rb-care-sound 4s ease both }
+.rb-care-sound path:nth-child(2) { animation-delay:110ms }
+.rb-care-sound path:nth-child(3) { animation-delay:220ms }
+.rb-care-exit-wave {
+  position:absolute;left:50px;top:100px;width:180px;height:50px;overflow:visible;
+  stroke:#98c8f3;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+  filter:drop-shadow(0 0 4px #b1e4ff);pointer-events:none;
+  animation:rb-care-exit-wave 4s ease-in-out both;
+}
+.rb-care-exit-wave path { stroke-dasharray:100;animation:rb-care-wave-draw 4s ease both }
+.rb-care-light-ring { position:absolute;inset:18px 8px 23px;border:1px solid #91bce059;border-top-color:#71a6d9a6;border-radius:50%;transform:rotateX(62deg) rotateZ(-25deg);animation:rb-care-ring 4s ease both }
+.rb-care-light-ring-alt { inset:35px 16px 12px;transform:rotateX(-58deg) rotateZ(28deg);border-color:#acc8eb50;animation-delay:150ms }
+.rb-care-spark { position:absolute;color:#86b5e3;font-size:17px;animation:rb-care-chat 4s ease both }
+.rb-care-spark-one { right:34px;top:24px }
+.rb-care-spark-two { left:40px;bottom:30px;font-size:12px;animation-delay:180ms }
+@keyframes rb-care-arrive {
+  0% { opacity:0;transform:translateY(35px) scale(.4) rotateZ(-12deg) }
+  18% { opacity:1;transform:translateY(-5px) scale(1.04) rotateZ(2deg) }
+  30%,98% { opacity:1;transform:translateY(0) scale(1) rotateZ(0) }
+  100% { opacity:0;transform:translateY(0) scale(1) rotateZ(0) }
+}
+@keyframes rb-care-headset-float {
+  0% { transform:rotateX(25deg) rotateY(-55deg) rotateZ(-15deg) }
+  25% { transform:rotateX(8deg) rotateY(-20deg) rotateZ(-6deg) }
+  48% { transform:translateY(-12px) rotateX(15deg) rotateY(25deg) rotateZ(5deg) }
+  68% { transform:translateY(-2px) rotateX(5deg) rotateY(-16deg) rotateZ(-4deg) }
+  77% { opacity:1;transform:translateY(-2px) rotateX(25deg) rotateY(55deg) rotateZ(-7deg) scale(.85) }
+  85% { opacity:.8;transform:translateY(0) rotateX(85deg) rotateY(105deg) rotateZ(0) scale(.65,.25) }
+  90%,100% { opacity:0;transform:translateY(0) rotateX(90deg) rotateY(125deg) rotateZ(0) scale(.2,0) }
+}
+@keyframes rb-care-ear-close {
+  0%,68% { transform:translateZ(8px) }
+  83%,100% { transform:translateX(var(--care-ear-fold)) translateZ(15px) rotateY(var(--care-ear-angle)) }
+}
+@keyframes rb-care-headband-close { 0%,68% { transform:scaleX(1) } 83%,100% { transform:scaleX(.62) } }
+@keyframes rb-care-orb-close { 0%,68% { opacity:1;transform:translateZ(-3px) scale(1) } 81%,100% { opacity:0;transform:translateZ(-3px) scale(0) } }
+@keyframes rb-care-mic-close { 0%,68% { transform:rotateZ(0) scale(1) } 82%,100% { transform:rotateZ(60deg) scale(.5) } }
+@keyframes rb-care-exit-wave {
+  0%,76% { opacity:0;transform:rotateY(-45deg) scale(.2,.4) }
+  85% { opacity:1;transform:rotateY(0) scale(1,1) }
+  94% { opacity:1;transform:rotateY(0) scale(1.15,.12) }
+  98% { opacity:.8;transform:rotateY(0) scale(.35,.05) }
+  100% { opacity:0;transform:rotateY(0) scale(0,0) }
+}
+@keyframes rb-care-wave-draw { 0%,76% { stroke-dashoffset:100 } 87%,100% { stroke-dashoffset:0 } }
+@keyframes rb-care-equalizer { from { scale:1 .35;opacity:.65 } to { scale:1 1;opacity:1 } }
+@keyframes rb-care-chat {
+  0%,15% { opacity:0;transform:translateY(20px) scale(.3) rotateY(40deg) }
+  36% { opacity:1;transform:translateY(0) scale(1) rotateY(-8deg) }
+  60% { transform:translateY(-8px) scale(1.04) rotateY(10deg) }
+  74% { opacity:.9;transform:translate(var(--care-fold-x,0px),var(--care-fold-y,0px)) scale(.35) rotateY(75deg) }
+  82%,100% { opacity:0;transform:translate(var(--care-fold-x,0px),var(--care-fold-y,0px)) scale(0) rotateY(100deg) }
+}
+@keyframes rb-care-sound { 0%,20% { opacity:0;translate:0 4px } 43% { opacity:.9;translate:-2px 0 } 70% { opacity:.5;translate:-5px 0 } 100% { opacity:0;translate:-10px 0 } }
+@keyframes rb-care-ring { 0%,10% { opacity:0;scale:.5 } 42%,68% { opacity:1;scale:1 } 87%,100% { opacity:0;scale:0 } }
+@keyframes rb-care-platform { 0%,10% { opacity:0;scale:.4 } 35%,75% { opacity:1;scale:1 } 100% { opacity:0;scale:1.3 } }
+@keyframes rb-care-aura { 0%,100% { opacity:0;scale:.6 } 38% { opacity:.7;scale:1 } 70% { opacity:1;scale:1.1 } }
+@keyframes rb-care-reflection { 0%,18%,100% { opacity:0 } 38% { opacity:.9 } 72% { opacity:.4 } }
+@keyframes rb-care-typing { from { translate:0 1px;opacity:.5 } to { translate:0 -2px;opacity:1 } }

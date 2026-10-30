@@ -1,0 +1,43 @@
+/* Optional ending only. The original organization artwork/timing remains intact. */
+.rb-org-motion.rb-org-pixel-ending {
+  animation-name:rb-org-pixel-reveal;
+}
+.rb-org-pixel-ending .rb-org-scene {
+  animation:rb-org-pixel-dissolve 4s linear both;
+}
+.rb-org-pixel-ending .rb-org-aura {
+  animation-name:rb-org-pixel-aura;
+}
+.rb-org-pixel-fragments {
+  position:absolute;inset:0;pointer-events:none;
+}
+.rb-org-pixel-fragments i {
+  position:absolute;opacity:0;border-radius:1px;
+  box-shadow:inset 1px 1px 0 #ffffff38,1px 2px 2px #3159831c;
+  animation:rb-org-pixel-fall 1000ms cubic-bezier(.35,.05,.65,1) both;
+  animation-delay:calc(2380ms + var(--pixel-row) * 23ms);
+  will-change:transform,opacity;
+}
+@keyframes rb-org-pixel-reveal {
+  0% { opacity:0;transform:translateY(45px) scale(.45) rotateZ(-12deg) }
+  16% { opacity:1;transform:translateY(-5px) scale(1.03) rotateZ(2deg) }
+  28%,96% { opacity:1;transform:translateY(0) scale(1) rotateZ(0) }
+  100% { opacity:0;transform:translateY(0) scale(1) }
+}
+@keyframes rb-org-pixel-dissolve {
+  0%,59.5% { clip-path:inset(0 0 0 0) }
+  74%,100% { clip-path:inset(100% 0 0 0) }
+}
+@keyframes rb-org-pixel-fall {
+  0% { opacity:0;transform:translate(0,0) rotate(0) scale(.8) }
+  3%,12% { opacity:1;transform:translate(0,0) rotate(0) scale(1) }
+  30% { opacity:1;transform:translate(calc(var(--pixel-drift) * .25),5px) rotate(calc(var(--pixel-spin) * .2)) scale(.95) }
+  65% { opacity:.85;transform:translate(calc(var(--pixel-drift) * .65),calc(var(--pixel-fall) * .4)) rotate(calc(var(--pixel-spin) * .6)) scale(.75) }
+  100% { opacity:0;transform:translate(var(--pixel-drift),var(--pixel-fall)) rotate(var(--pixel-spin)) scale(.15) }
+}
+@keyframes rb-org-pixel-aura {
+  0%,100% { opacity:0;transform:scale(.5) }
+  35% { opacity:.7;transform:scale(1) }
+  57% { opacity:1;transform:scale(1.1) }
+  77% { opacity:0;transform:scale(1.2) }
+}

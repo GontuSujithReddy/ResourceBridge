@@ -1,0 +1,76 @@
+.rb-identity-fx {
+  position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none;
+}
+.rb-identity-gyro {
+  position:absolute;left:18px;top:8px;width:244px;height:244px;border-radius:50%;
+  border:2px solid #89b7eb80;border-top-color:#f3fcff;border-bottom-color:#477fca;
+  box-shadow:inset 0 0 10px #9edbff55,0 0 10px #7daef355;
+  transform-style:preserve-3d;--gyro-tilt:65deg;--gyro-yaw:15deg;
+  animation:rb-identity-gyro-collapse 4s ease-in-out both;
+}
+.rb-identity-gyro::before {
+  content:"";position:absolute;inset:7px;border-radius:50%;border:1px dashed #74a4deaa;
+}
+.rb-identity-gyro-two {
+  --gyro-tilt:-58deg;--gyro-yaw:-30deg;
+  left:31px;top:21px;width:218px;height:218px;border-width:3px;
+}
+.rb-identity-gyro-three {
+  --gyro-tilt:20deg;--gyro-yaw:70deg;
+  left:9px;top:-1px;width:262px;height:262px;border-color:#c6eaff90;
+  border-right-color:#4c87d4;
+}
+.rb-identity-prism {
+  position:absolute;left:130px;top:122px;width:20px;height:16px;
+  clip-path:polygon(0 18%,72% 0,100% 55%,24% 100%);
+  background:linear-gradient(125deg,#f3fcff 8%,#9acafa 38%,#3977c5 40%,#d4efff 74%,#658fc9);
+  filter:drop-shadow(0 0 3px #a6dbff);backface-visibility:visible;
+  animation:rb-identity-prism-spiral 4s cubic-bezier(.4,0,.3,1) both;
+}
+.rb-identity-prism:nth-child(even) {
+  width:14px;height:24px;clip-path:polygon(50% 0,100% 75%,35% 100%,0 28%);
+}
+.rb-identity-lens {
+  position:absolute;left:45px;top:128px;width:190px;height:3px;border-radius:50%;
+  background:linear-gradient(90deg,transparent,#91ceff 25%,#fff 50%,#91ceff 75%,transparent);
+  box-shadow:0 0 8px #7ab8ff,0 0 18px #a7dcff;
+  animation:rb-identity-lens-bloom 4s ease both;
+}
+.rb-identity-lens::before,.rb-identity-lens::after {
+  content:"";position:absolute;left:76px;top:-18px;width:38px;height:38px;border-radius:50%;
+  background:radial-gradient(circle,#fff 0,#e2f7ffb3 22%,#83c0fb50 48%,transparent 72%);
+}
+.rb-identity-lens::after {
+  left:35px;top:-1px;width:120px;height:5px;border-radius:50%;transform:rotate(-38deg);
+  background:linear-gradient(90deg,transparent,#dff6ff,transparent);
+}
+.rb-identity-fx::after {
+  content:"";position:absolute;left:20px;top:10px;width:240px;height:240px;border-radius:50%;
+  border:1px solid #c6eaff;box-shadow:inset 0 0 16px #9bd3ff40,0 0 12px #95c6fb50;
+  animation:rb-identity-shockwave 4s ease-out both;
+}
+@keyframes rb-identity-gyro-collapse {
+  0%,63% { opacity:0;transform:rotateX(var(--gyro-tilt)) rotateY(var(--gyro-yaw)) rotateZ(-70deg) scale(.45) }
+  74% { opacity:1;transform:rotateX(var(--gyro-tilt)) rotateY(var(--gyro-yaw)) rotateZ(40deg) scale(1) }
+  82% { opacity:.95;transform:rotateX(calc(var(--gyro-tilt) + 25deg)) rotateY(calc(var(--gyro-yaw) - 35deg)) rotateZ(150deg) scale(1.08) }
+  92% { opacity:.8;transform:rotateX(80deg) rotateY(50deg) rotateZ(280deg) scale(.22) }
+  98%,100% { opacity:0;transform:rotateX(90deg) rotateY(80deg) rotateZ(340deg) scale(0) }
+}
+@keyframes rb-identity-prism-spiral {
+  0%,67% { opacity:0;transform:rotateZ(var(--prism-angle)) translateX(15px) scale(0) }
+  78% { opacity:1;transform:rotateZ(var(--prism-angle)) translateX(var(--prism-radius)) translateZ(var(--prism-depth)) rotateY(35deg) rotateZ(20deg) scale(1) }
+  85% { opacity:1;transform:rotateZ(calc(var(--prism-angle) + 100deg)) translateX(calc(var(--prism-radius) * .8)) translateZ(var(--prism-depth)) rotateY(140deg) rotateZ(70deg) scale(.85) }
+  93% { opacity:.8;transform:rotateZ(calc(var(--prism-angle) + 200deg)) translateX(12px) translateZ(0) rotateY(240deg) rotateZ(110deg) scale(.3) }
+  98%,100% { opacity:0;transform:rotateZ(calc(var(--prism-angle) + 260deg)) translateX(0) translateZ(0) rotateY(300deg) rotateZ(150deg) scale(0) }
+}
+@keyframes rb-identity-lens-bloom {
+  0%,83% { opacity:0;transform:scale(.1,.2) }
+  90% { opacity:1;transform:scale(1,1) }
+  95% { opacity:.6;transform:scale(1.15,.5) }
+  100% { opacity:0;transform:scale(0,0) }
+}
+@keyframes rb-identity-shockwave {
+  0%,82% { opacity:0;transform:rotateX(30deg) scale(.05) }
+  88% { opacity:.85;transform:rotateX(20deg) scale(.7) }
+  97%,100% { opacity:0;transform:rotateX(5deg) scale(1.22) }
+}

@@ -1,0 +1,114 @@
+.rb-resources-motion {
+  width:320px;height:300px;position:relative;perspective:900px;
+  animation:rb-resources-journey 4s cubic-bezier(.2,.75,.25,1) both;
+}
+.rb-resources-stage { position:absolute;inset:0;transform-style:preserve-3d }
+.rb-resources-glow {
+  position:absolute;inset:0 -15px -15px;border-radius:50%;
+  background:radial-gradient(ellipse,#bce5ff99,transparent 68%);
+  animation:rb-resources-glow 4s ease both;
+}
+.rb-resources-floor {
+  position:absolute;left:40px;bottom:16px;width:240px;height:50px;border-radius:50%;
+  background:radial-gradient(ellipse,#153c7960,transparent 68%);filter:blur(7px);
+  animation:rb-resources-shadow 4s ease both;
+}
+.rb-resources-ring {
+  position:absolute;left:20px;bottom:10px;width:280px;height:70px;border-radius:50%;
+  border:1px solid #5ca6d77a;box-shadow:0 0 16px #79cfff40,inset 0 0 16px #79cfff30;
+  animation:rb-resources-ring 4s ease both;
+}
+.rb-resources-ring-inner { left:47px;bottom:20px;width:226px;height:50px;border-style:dashed;animation-delay:90ms }
+.rb-resources-vault {
+  position:absolute;left:76px;top:150px;width:168px;height:105px;
+  transform-style:preserve-3d;transform:rotateX(-13deg) rotateY(-22deg);
+  animation:rb-resources-vault-turn 4s ease-in-out both;
+}
+.rb-resources-vault-back {
+  position:absolute;inset:0;border-radius:16px;background:linear-gradient(140deg,#1c4779,#0b254d);
+  transform:translateZ(-40px);box-shadow:0 0 0 1px #326091;
+}
+.rb-resources-vault-light {
+  position:absolute;inset:-22px 5px 40px;background:linear-gradient(0deg,#8ce6ffb0,transparent);
+  filter:blur(8px);animation:rb-resources-light 4s ease both;
+}
+.rb-resources-vault-front {
+  position:absolute;inset:0;display:grid;place-items:center;color:#dbf4ff;overflow:hidden;
+  border:1px solid #91c1ff;border-radius:15px;
+  background:linear-gradient(125deg,#6baff2 0%,#387ad0 40%,#1f4c96 100%);
+  box-shadow:inset 2px 2px 3px #e0f5ffab,inset -3px -4px 5px #133b7570,0 15px 25px #15478336;
+  transform:translateZ(25px);
+}
+.rb-resources-vault-front svg { filter:drop-shadow(0 2px 1px #143a7c) }
+.rb-resources-vault-seam { position:absolute;left:10px;right:10px;top:15px;height:1px;background:#c1e5ff66 }
+.rb-resources-vault-dots { position:absolute;bottom:12px;display:flex;gap:5px }
+.rb-resources-vault-dots i { width:4px;height:4px;border-radius:50%;background:#b2e9ff;box-shadow:0 0 6px #91dcff }
+.rb-resources-vault-side {
+  position:absolute;right:-32px;top:0;width:58px;height:105px;border-radius:0 12px 12px 0;
+  background:linear-gradient(90deg,#1f4d91,#123264);transform:rotateY(90deg);transform-origin:left center;
+}
+.rb-resources-vault-lid {
+  position:absolute;left:-2px;top:-9px;width:172px;height:64px;
+  border:1px solid #bddeff;border-radius:12px;
+  background:linear-gradient(145deg,#c1eaff,#579ee6 50%,#346db3);
+  box-shadow:inset 0 2px 3px #fff9,0 5px 0 #204f91;
+  transform-origin:50% 0;animation:rb-resources-lid 4s ease-in-out both;
+}
+.rb-resources-tile {
+  position:absolute;left:46px;top:6px;width:76px;height:80px;display:grid;place-items:center;
+  border:1px solid #ffffffb0;border-radius:18px;color:white;overflow:hidden;
+  box-shadow:inset 2px 2px 3px #ffffff80,5px 7px 0 #244e7c55,0 15px 24px #1b466a33;
+  animation:rb-resources-tile-flight 4s cubic-bezier(.2,.7,.25,1) both;
+  animation-delay:var(--tile-delay);
+}
+.rb-resources-tile-teal { background:linear-gradient(135deg,#7bd7cc,#287f91) }
+.rb-resources-tile-blue { background:linear-gradient(135deg,#86baff,#3765c2) }
+.rb-resources-tile-amber { background:linear-gradient(135deg,#ffd27d,#d18b2b) }
+.rb-resources-tile svg { filter:drop-shadow(0 3px 1px #163b6a44) }
+.rb-resources-tile-glint {
+  position:absolute;inset:-50%;background:linear-gradient(110deg,transparent 40%,#fff8 50%,transparent 60%);
+  animation:rb-resources-glint 4s ease both;
+}
+.rb-resources-mote {
+  position:absolute;left:157px;top:150px;width:5px;height:5px;border-radius:2px;
+  background:#529acb;box-shadow:0 0 9px #5dbce3;animation:rb-resources-mote 4s ease both;
+  animation-delay:var(--mote-delay);
+}
+@keyframes rb-resources-journey {
+  0%,3% { opacity:0;transform:translate(-140px,65px) rotateZ(-15deg) scale(.35) }
+  17% { opacity:1;transform:translate(0,-5px) rotateZ(3deg) scale(1.05) }
+  27%,76% { opacity:1;transform:translate(0,0) rotateZ(0) scale(1) }
+  86% { opacity:1;transform:translate(20px,-8px) rotateZ(-5deg) scale(.95) }
+  100% { opacity:0;transform:translate(240px,-70px) rotateZ(18deg) scale(.25) }
+}
+@keyframes rb-resources-vault-turn {
+  0%,18% { transform:rotateX(-13deg) rotateY(-35deg) translateY(15px) }
+  42% { transform:rotateX(-18deg) rotateY(18deg) translateY(-8px) }
+  62% { transform:rotateX(-10deg) rotateY(-18deg) translateY(0) }
+  80%,100% { transform:rotateX(-13deg) rotateY(-22deg) translateY(0) }
+}
+@keyframes rb-resources-lid {
+  0%,17% { transform:translateZ(27px) rotateX(82deg) }
+  30%,65% { transform:translateZ(-25px) rotateX(205deg) }
+  80%,100% { transform:translateZ(27px) rotateX(82deg) }
+}
+@keyframes rb-resources-tile-flight {
+  0%,20% { opacity:0;transform:translate3d(0,18px,-15px) rotateY(80deg) scale(.25) }
+  38% { opacity:1;transform:translate3d(var(--tile-x),var(--tile-y),65px) rotateZ(var(--tile-turn)) rotateY(-15deg) scale(1) }
+  52% { opacity:1;transform:translate3d(var(--tile-x),calc(var(--tile-y) - 18px),85px) rotateZ(var(--tile-turn)) rotateY(30deg) scale(1.08) }
+  65% { opacity:1;transform:translate3d(var(--tile-x),var(--tile-y),65px) rotateZ(var(--tile-turn)) rotateY(-10deg) scale(1) }
+  77%,100% { opacity:0;transform:translate3d(0,20px,-20px) rotateY(95deg) scale(.2) }
+}
+@keyframes rb-resources-glint { 0%,30% { transform:translateX(-90%) } 60%,100% { transform:translateX(90%) } }
+@keyframes rb-resources-light { 0%,20%,80%,100% { opacity:0;transform:scaleY(.2) } 35%,65% { opacity:1;transform:scaleY(2.5) } }
+@keyframes rb-resources-ring { 0%,15% { opacity:0;transform:scale(.25) } 40%,70% { opacity:1;transform:scale(1) rotate(-8deg) } 90%,100% { opacity:0;transform:scale(1.3) rotate(8deg) } }
+@keyframes rb-resources-glow { 0%,100% { opacity:0 } 30%,75% { opacity:1 } }
+@keyframes rb-resources-shadow { 0%,100% { opacity:0;scale:.5 } 30%,75% { opacity:1;scale:1 } }
+@keyframes rb-resources-mote {
+  0%,25% { opacity:0;transform:rotate(var(--mote-angle)) translateX(25px) scale(0) }
+  42% { opacity:.8;transform:rotate(var(--mote-angle)) translateX(125px) scale(1) }
+  70%,100% { opacity:0;transform:rotate(var(--mote-angle)) translateX(155px) scale(.2) }
+}
+@media (max-height:500px) {
+  .rb-resources-motion { margin-top:-25px;margin-bottom:-40px;zoom:.75 }
+}

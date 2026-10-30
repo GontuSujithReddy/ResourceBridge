@@ -1,0 +1,66 @@
+/* Jarvis house launcher icon: self-contained 58px decorative art. */
+.rb-jh { position:relative; display:inline-block; flex:none; width:58px; height:58px; pointer-events:none; user-select:none; transition:transform .4s cubic-bezier(.2,.75,.25,1); }
+.rb-jh * { pointer-events:none; }
+.rb-jh-float { position:absolute; inset:-2px; animation:rb-jh-float 5.6s ease-in-out infinite; transition:transform .4s cubic-bezier(.2,.75,.25,1); }
+.rb-jh-halo { position:absolute; inset:4px; border-radius:50%; background:radial-gradient(circle,#ffd9a866,#c58bff33 50%,transparent 72%); animation:rb-jh-halo 4.4s ease-in-out infinite; }
+.rb-jh-art,.rb-jh-over { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+.rb-jh-art { filter:drop-shadow(0 3px 4px #1d0a3570); }
+/* Window: 12.5..34.5 x 35.5..52.5 of a 64 viewBox over 62px box */
+.rb-jh-robot { position:absolute; left:19.4%; top:55.5%; width:34.4%; height:26.6%; overflow:hidden; border-radius:2.5px; display:grid; place-items:end center; animation:rb-jh-window-visit 5s ease-in-out infinite; }
+.rb-jh-robot .rb-jh-avatar { display:block; width:118%; height:auto; margin-bottom:-6%; }
+.rb-jh-door-visitor { position:absolute; z-index:2; left:31%; top:60%; width:40px; height:32px; opacity:0; transform-origin:50% 70%; animation:rb-jh-visit 5s cubic-bezier(.32,.72,.3,1) infinite; }
+.rb-jh-visiting-avatar { display:block; width:100%; height:auto; filter:drop-shadow(0 2px 2px #33105380); }
+.rb-jh-greeting { position:absolute; z-index:3; left:3%; top:-19px; padding:4px 7px; border:1px solid #b57bea; border-radius:9px 9px 9px 2px; background:#fff8ff; color:#69319d; box-shadow:0 4px 9px #33105355; font:800 11px/1 'DM Sans',sans-serif; white-space:nowrap; opacity:0; animation:rb-jh-hello 5s ease-in-out infinite; }
+.rb-jh-eye-star { position:absolute; z-index:2; width:7px; height:7px; background:#fff0a4; clip-path:polygon(50% 0%,60% 38%,100% 50%,60% 62%,50% 100%,40% 62%,0% 50%,40% 38%); opacity:0; animation:rb-jh-eye-starlight 5s ease-out infinite; }
+.rb-jh-eye-star-one { left:29%; top:29%; --star-x:-15px; --star-y:-18px; }
+.rb-jh-eye-star-two { left:36%; top:37%; --star-x:-19px; --star-y:-7px; animation-delay:.08s; }
+.rb-jh-eye-star-three { left:59%; top:29%; --star-x:14px; --star-y:-18px; animation-delay:.12s; }
+.rb-jh-eye-star-four { left:66%; top:37%; --star-x:18px; --star-y:-7px; animation-delay:.2s; }
+.rb-jh-window { animation:rb-jh-glow 3.8s ease-in-out infinite; }
+.rb-jh-sidewin { animation:rb-jh-glow 5.2s ease-in-out infinite .8s; }
+.rb-jh-door { animation:rb-jh-glow 4.6s ease-in-out infinite 1.4s; }
+.rb-jh-doorspill { animation:rb-jh-spill 4.6s ease-in-out infinite 1.4s; }
+.rb-jh-puff { opacity:0; transform-box:fill-box; transform-origin:center; animation:rb-jh-puff 4.2s ease-out infinite; }
+.rb-jh-p2 { animation-delay:1.4s; } .rb-jh-p3 { animation-delay:2.8s; }
+.rb-jh-spark { opacity:0; transform-box:fill-box; transform-origin:center; animation:rb-jh-spark 3.6s ease-in-out infinite; }
+.rb-jh-s2 { animation-delay:1.2s; } .rb-jh-s3 { animation-delay:2.3s; }
+
+.rb-ai-launcher:hover .rb-jh,.rb-ai-launcher:focus-visible .rb-jh { transform:translateY(-2px) scale(1.06) rotate(-2deg); }
+.rb-ai-launcher:hover .rb-jh-halo,.rb-ai-launcher:focus-visible .rb-jh-halo { opacity:1; }
+.rb-ai-launcher:hover .rb-jh-spark,.rb-ai-launcher:focus-visible .rb-jh-spark { animation-duration:1.8s; }
+
+@keyframes rb-jh-float { 0%,100% { transform:translateY(1px); } 50% { transform:translateY(-2px); } }
+@keyframes rb-jh-halo { 0%,100% { opacity:.55; transform:scale(.94); } 50% { opacity:.95; transform:scale(1.06); } }
+@keyframes rb-jh-glow { 0%,100% { opacity:.86; } 50% { opacity:1; } }
+@keyframes rb-jh-spill { 0%,100% { opacity:.3; } 50% { opacity:.55; } }
+@keyframes rb-jh-puff { 0% { opacity:0; transform:translate(0,4px) scale(.6); } 25% { opacity:.85; } 100% { opacity:0; transform:translate(3px,-5px) scale(1.4); } }
+@keyframes rb-jh-spark { 0%,100% { opacity:0; transform:scale(.4) rotate(0); } 45%,55% { opacity:1; transform:scale(1) rotate(45deg); } }
+/* One complete doorstep greeting every five seconds; the window is vacant only while Jarvis is out. */
+@keyframes rb-jh-window-visit {
+  0%,12%,94%,100% { opacity:1; transform:none; }
+  23%,82% { opacity:0; transform:translateY(3px) scale(.78); }
+}
+@keyframes rb-jh-visit {
+  0%,10% { opacity:0; transform:translate(3px,8px) scale(.18); }
+  24% { opacity:1; transform:translate(3px,-7px) scale(.96); }
+  34%,67% { opacity:1; transform:translate(3px,-15px) scale(1.12); }
+  76% { opacity:1; transform:translate(3px,-7px) scale(.95); }
+  90%,100% { opacity:0; transform:translate(3px,8px) scale(.18); }
+}
+@keyframes rb-jh-hello {
+  0%,28%,75%,100% { opacity:0; transform:translateY(5px) scale(.65); }
+  37%,65% { opacity:1; transform:translateY(0) scale(1); }
+}
+@keyframes rb-jh-eye-starlight {
+  0%,40% { opacity:0; transform:translate(0,0) scale(.2); }
+  48% { opacity:1; transform:translate(0,-2px) scale(1.2); }
+  65%,100% { opacity:0; transform:translate(var(--star-x),var(--star-y)) scale(.5); }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .rb-jh-float,.rb-jh-halo,.rb-jh-window,.rb-jh-sidewin,.rb-jh-door,.rb-jh-doorspill,.rb-jh-puff,.rb-jh-spark { animation:none; }
+  .rb-jh,.rb-jh-float { transition:none; }
+  .rb-jh-spark { opacity:.7; }
+  .rb-jh-p1 { opacity:.5; }
+  .rb-ai-launcher:hover .rb-jh,.rb-ai-launcher:focus-visible .rb-jh { transform:none; }
+}

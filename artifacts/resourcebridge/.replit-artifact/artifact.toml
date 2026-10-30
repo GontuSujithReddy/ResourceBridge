@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/resourcebridge/"
+title = "ResourceBridge"
+description = "A resource-sharing platform for communities, campuses, laboratories, and small businesses to discover, request, approve, and safely return underused spaces and equipment."
+version = "1.0.0"
+id = "artifacts/resourcebridge"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/resourcebridge/" ]
+localPort = 21635
+
+[services.development]
+run = "pnpm --filter @workspace/resourcebridge run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/resourcebridge", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/resourcebridge/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21635"
+BASE_PATH = "/resourcebridge/"

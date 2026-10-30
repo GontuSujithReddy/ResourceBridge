@@ -1,0 +1,31 @@
+.rb-page-loading {
+  min-height: calc(100dvh - 62px);
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  color: #718198;
+  background: #f3f7fc;
+  font-size: 13px;
+}
+.rb-page-loading-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: rb-loading-appear .15s ease .2s forwards;
+}
+.rb-page-loading-spinner {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  border: 2px solid #dbe5f3;
+  border-top-color: #3568bf;
+  border-radius: 50%;
+  animation: rb-loading-turn .9s linear infinite;
+}
+@keyframes rb-loading-appear { to { opacity: 1; } }
+@keyframes rb-loading-turn { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .rb-page-loading-indicator { opacity: 1; animation: none; }
+  .rb-page-loading-spinner { animation: none; }
+}

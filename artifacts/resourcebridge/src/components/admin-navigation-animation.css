@@ -1,0 +1,138 @@
+.rb-admin-motion {
+  position:relative;width:340px;max-width:100vw;height:300px;perspective:1000px;isolation:isolate;
+  animation:rb-admin-appearance 4s ease both;
+}
+.rb-admin-aura {
+  position:absolute;inset:-10px;border-radius:50%;
+  background:radial-gradient(ellipse,#acd5f57a,transparent 68%);
+  animation:rb-admin-aura 4s ease both;
+}
+.rb-admin-platform {
+  position:absolute;left:44px;bottom:5px;width:252px;height:65px;transform-style:preserve-3d;
+  animation:rb-admin-platform 4s ease both;
+}
+.rb-admin-platform i {
+  position:absolute;inset:0;border:1px solid #8cb9df;border-radius:50%;
+  background:radial-gradient(ellipse,#7daedc44,transparent 70%);
+  box-shadow:0 8px 0 #6388b42b,inset 0 0 20px #caeaff88;
+}
+.rb-admin-platform i:nth-child(2) { inset:9px 25px;border-style:dashed;transform:translateY(-9px) }
+.rb-admin-platform i:nth-child(3) { inset:19px 58px;transform:translateY(-18px);box-shadow:0 0 18px #75c9fb }
+.rb-admin-console {
+  position:absolute;left:104px;top:66px;width:132px;height:166px;transform-style:preserve-3d;
+  animation:rb-admin-console 4s cubic-bezier(.2,.7,.25,1) both;
+}
+.rb-admin-console-face,.rb-admin-console-depth {
+  position:absolute;inset:0;border-radius:22px;
+}
+.rb-admin-console-depth {
+  background:linear-gradient(130deg,#7397c8,#23446f);border:1px solid #8dafd8;
+  transform:translate3d(7px,7px,-18px);
+}
+.rb-admin-console-face {
+  display:flex;flex-direction:column;align-items:center;overflow:hidden;border:1px solid #d3eaff;
+  background:linear-gradient(135deg,#9ac9f6,#4f8cd6 45%,#234c8d);
+  box-shadow:inset 2px 2px 3px #ffffffb0,inset -3px -4px 5px #20396966,0 22px 35px #214c7a33;
+  transform:translateZ(16px);
+}
+.rb-admin-console-header { display:flex;gap:5px;align-self:flex-start;margin:15px 16px 9px }
+.rb-admin-console-header i { width:4px;height:4px;border-radius:50%;background:#d3eaff }
+.rb-admin-dial { position:relative;width:88px;height:88px;display:grid;place-items:center;color:#edf8ff }
+.rb-admin-dial>span {
+  position:absolute;inset:0;border:2px dashed #caeaff99;border-top:3px solid #e4faff;border-radius:50%;
+  box-shadow:0 0 15px #a9e2ff55,inset 0 0 15px #a9e2ff33;
+  animation:rb-admin-dial 4s ease-in-out both;
+}
+.rb-admin-dial svg { filter:drop-shadow(0 4px 1px #17447b);animation:rb-admin-slider 4s ease both }
+.rb-admin-console-slots { display:flex;gap:5px;margin-top:14px }
+.rb-admin-console-slots i { width:20px;height:4px;border-radius:3px;background:#b7dcff;box-shadow:0 1px 0 #1c4a85 }
+.rb-admin-console-slots i:nth-child(2) { background:#96d9dc }
+.rb-admin-wing {
+  position:absolute;top:14px;width:83px;height:133px;padding:18px 13px;box-sizing:border-box;
+  border:1px solid #eefaff;border-radius:14px;overflow:hidden;color:#416ca3;
+  background:linear-gradient(130deg,#f5fcfff0,#c4dff4ed);
+  box-shadow:inset 1px 1px 2px white,0 9px 0 #4778a43b,0 15px 25px #2a54732b;
+}
+.rb-admin-wing-left { left:-77px;transform-origin:right center;animation:rb-admin-wing-left 4s ease both }
+.rb-admin-wing-right { right:-77px;transform-origin:left center;animation:rb-admin-wing-right 4s ease both }
+.rb-admin-member-lines { display:grid;gap:8px;margin-top:18px }
+.rb-admin-member-lines i { height:5px;border-radius:4px;background:linear-gradient(90deg,#6896b8 0 12%,transparent 12% 22%,#9abbd5 22% 100%) }
+.rb-admin-member-lines i:last-child { width:70% }
+.rb-admin-controls { display:flex;gap:10px;margin-top:14px;height:36px;justify-content:center }
+.rb-admin-controls i { position:relative;width:3px;border-radius:3px;background:#9abbd5 }
+.rb-admin-controls i::after {
+  content:"";position:absolute;left:-3px;top:7px;width:9px;height:6px;border-radius:3px;background:#528ba7;
+  animation:rb-admin-control 4s ease-in-out both;
+}
+.rb-admin-controls i:nth-child(2)::after { top:22px;animation-direction:reverse }
+.rb-admin-controls i:last-child::after { top:15px }
+.rb-admin-panel-shine {
+  position:absolute;inset:-60%;pointer-events:none;
+  background:linear-gradient(115deg,transparent 43%,#ffffff80 50%,transparent 57%);
+  animation:rb-admin-shine 4s ease both;
+}
+.rb-admin-satellite {
+  position:absolute;left:148px;top:130px;width:44px;height:46px;display:grid;place-items:center;
+  color:#eafaff;border:1px solid #b8dfff;border-radius:12px;
+  background:linear-gradient(135deg,#6597c8,#2b527e);
+  box-shadow:3px 5px 0 #34587f66,0 12px 18px #33557825;
+}
+.rb-admin-satellite-one { animation:rb-admin-orbit-one 4s cubic-bezier(.3,.6,.35,1) both }
+.rb-admin-satellite-two { animation:rb-admin-orbit-two 4s cubic-bezier(.3,.6,.35,1) both }
+.rb-admin-light-column {
+  position:absolute;left:105px;bottom:35px;width:130px;height:230px;pointer-events:none;
+  background:linear-gradient(0deg,#d2f5ffbb,#a9dcff55,transparent);
+  clip-path:polygon(30% 100%,70% 100%,100% 0,0 0);filter:blur(5px);mix-blend-mode:screen;
+  transform-origin:bottom;animation:rb-admin-beam 4s ease both;
+}
+.rb-admin-exit-ripple {
+  position:absolute;left:45px;bottom:24px;width:250px;height:52px;border-radius:50%;
+  border:2px solid #99c9e7;box-shadow:0 0 20px #c0edff;
+  animation:rb-admin-ripple 4s ease both;
+}
+@keyframes rb-admin-appearance { 0%,2%,100% { opacity:0 } 9%,92% { opacity:1 } }
+@keyframes rb-admin-aura { 0%,100% { opacity:0;scale:.3 } 30%,70% { opacity:1;scale:1 } }
+@keyframes rb-admin-platform {
+  0%,4% { opacity:0;transform:scale(.2) }
+  19%,70% { opacity:1;transform:scale(1) }
+  94%,100% { opacity:0;transform:scale(.3) }
+}
+@keyframes rb-admin-console {
+  0%,6% { opacity:0;transform:translateY(80px) rotateX(65deg) rotateY(-55deg) scale(.2) }
+  24% { opacity:1;transform:translateY(-6px) rotateX(-9deg) rotateY(-24deg) scale(1) }
+  44% { opacity:1;transform:translateY(-16px) rotateX(8deg) rotateY(22deg) scale(1.04) }
+  63% { opacity:1;transform:translateY(-4px) rotateX(-8deg) rotateY(-18deg) scale(1) }
+  77% { opacity:1;transform:translateY(0) rotateX(-5deg) rotateY(0) scale(.9) }
+  94%,100% { opacity:0;transform:translateY(120px) rotateX(70deg) rotateY(160deg) scale(.08) }
+}
+@keyframes rb-admin-wing-left {
+  0%,23% { opacity:0;transform:rotateY(155deg) translateZ(-10px) }
+  39%,63% { opacity:1;transform:rotateY(-20deg) translateZ(0) }
+  78%,100% { opacity:0;transform:rotateY(155deg) translateZ(-10px) }
+}
+@keyframes rb-admin-wing-right {
+  0%,26% { opacity:0;transform:rotateY(-155deg) translateZ(-10px) }
+  42%,63% { opacity:1;transform:rotateY(20deg) translateZ(0) }
+  78%,100% { opacity:0;transform:rotateY(-155deg) translateZ(-10px) }
+}
+@keyframes rb-admin-dial { 0% { transform:rotate(-150deg) } 40% { transform:rotate(30deg) } 68% { transform:rotate(240deg) } 100% { transform:rotate(480deg) } }
+@keyframes rb-admin-slider { 0%,22% { transform:scale(.6) rotate(-15deg) } 44% { transform:scale(1.12) rotate(8deg) } 63%,100% { transform:scale(1) rotate(0) } }
+@keyframes rb-admin-control { 0%,30%,100% { transform:translateY(0) } 50% { transform:translateY(10px) } 65% { transform:translateY(-5px) } }
+@keyframes rb-admin-shine { 0%,26% { transform:translateX(-90%) } 65%,100% { transform:translateX(90%) } }
+@keyframes rb-admin-orbit-one {
+  0%,20% { opacity:0;transform:translate(0,40px) rotateY(-90deg) scale(.2) }
+  35% { opacity:1;transform:translate(-110px,-90px) rotateZ(-14deg) rotateY(-20deg) scale(.85) }
+  53% { opacity:1;transform:translate(60px,-110px) rotateZ(15deg) rotateY(25deg) scale(.7) }
+  68% { opacity:1;transform:translate(124px,20px) rotateZ(-12deg) scale(1) }
+  82%,100% { opacity:0;transform:translate(0,95px) rotateY(90deg) scale(.1) }
+}
+@keyframes rb-admin-orbit-two {
+  0%,23% { opacity:0;transform:translate(0,50px) rotateY(90deg) scale(.2) }
+  38% { opacity:1;transform:translate(113px,40px) rotateZ(12deg) scale(1) }
+  55% { opacity:1;transform:translate(-85px,65px) rotateZ(-12deg) scale(1.08) }
+  68% { opacity:1;transform:translate(-123px,-60px) rotateY(-20deg) scale(.8) }
+  82%,100% { opacity:0;transform:translate(0,95px) rotateY(-90deg) scale(.1) }
+}
+@keyframes rb-admin-beam { 0%,72% { opacity:0;transform:scaleX(.2) scaleY(.2) } 83% { opacity:.9;transform:scaleX(1) scaleY(1) } 98%,100% { opacity:0;transform:scaleX(.1) scaleY(.2) } }
+@keyframes rb-admin-ripple { 0%,77% { opacity:0;transform:scale(.2) } 86% { opacity:1;transform:scale(.7) } 100% { opacity:0;transform:scale(1.5) } }
+@media (max-height:500px) { .rb-admin-motion { zoom:.75;margin-top:-20px;margin-bottom:-35px } }

@@ -1,0 +1,39 @@
+.rb-about-page { width: min(100%, 1040px); margin: 0 auto; padding: 34px 0 68px; color: #243a55; }
+.rb-about-hero { max-width: 760px; margin-bottom: 28px; }
+.rb-about-eyebrow { color: #5273a0; font: 700 10px/1.5 "DM Sans", sans-serif; letter-spacing: .16em; }
+.rb-about-hero h1 { max-width: 760px; margin: 9px 0 12px; color: #213750; font: 750 clamp(30px, 4.7vw, 48px)/1.12 Manrope, sans-serif; letter-spacing: -.045em; }
+.rb-about-hero>p { max-width: 630px; margin: 0; color: #6e8095; font: 400 15px/1.7 "DM Sans", sans-serif; }
+.rb-about-layout { display: grid; grid-template-columns: minmax(0,1.45fr) minmax(260px,.75fr); align-items: start; gap: 18px; }
+.rb-about-letter,.rb-about-commitments { border: 1px solid #dae3ed; border-radius: 16px; background: #fff; box-shadow: 0 12px 34px rgba(36,58,85,.055); }
+.rb-about-letter { padding: clamp(24px, 4vw, 42px); }
+.rb-about-letter-top { display: flex; align-items: center; gap: 15px; color: #7790ad; font: 700 9px "DM Sans", sans-serif; letter-spacing: .15em; }
+.rb-about-letter-rule { height: 1px; flex: 1; background: #e6ecf2; }
+.rb-about-letter>p { margin: 17px 0 0; color: #556b84; font: 400 14px/1.85 "DM Sans", sans-serif; }
+.rb-about-letter .rb-about-salutation { margin-top: 25px; color: #2f4662; font-weight: 650; }
+.rb-about-signoff { display: grid; gap: 4px; margin-top: 24px; color: #6b7e93; font: 400 12px/1.55 "DM Sans", sans-serif; }
+.rb-about-signoff strong { color: #2b4669; font: 750 16px/1.4 Manrope, sans-serif; }
+.rb-about-signoff span:last-child { color: #788ca3; font-size: 10px; letter-spacing: .04em; }
+.rb-about-explore { display: inline-flex; align-items: center; gap: 9px; margin-top: 23px; padding: 11px 14px; border-radius: 9px; background: #3165b1; color: #fff; font: 650 12px "DM Sans", sans-serif; text-decoration: none; transition: background .18s, transform .18s; }
+.rb-about-explore:hover { background: #25579c; transform: translateY(-1px); }
+.rb-about-explore:focus-visible { outline: 3px solid #88aade; outline-offset: 3px; }
+.rb-about-commitments { padding: 22px 20px 10px; background: linear-gradient(155deg,#fff 0%,#f7f9fc 100%); }
+.rb-about-commitments-heading { display: flex; gap: 11px; padding-bottom: 17px; border-bottom: 1px solid #e5ebf2; }
+.rb-about-commitments-heading>span { display: grid; flex: 0 0 auto; place-items: center; width: 31px; height: 31px; border-radius: 10px; background: #e8f0fb; color: #3c6cac; }
+.rb-about-commitments-heading h2 { margin: 4px 0 0; color: #2b405a; font: 700 15px/1.4 Manrope, sans-serif; }
+.rb-about-commitment { display: flex; gap: 11px; padding: 17px 0; border-bottom: 1px solid #e9eef4; }
+.rb-about-commitment:last-child { border-bottom: 0; }
+.rb-about-commitment-icon { display: grid; flex: 0 0 auto; place-items: center; width: 31px; height: 31px; border-radius: 9px; background: #eef3f9; color: #4c6c92; }
+.rb-about-commitment-index { color: #8396ac; font: 700 9px "DM Sans", sans-serif; letter-spacing: .12em; }
+.rb-about-commitment h3 { margin: 3px 0 4px; color: #304966; font: 700 12px Manrope, sans-serif; }
+.rb-about-commitment p { margin: 0; color: #75869b; font: 400 11px/1.6 "DM Sans", sans-serif; }
+@media (max-width: 760px) {
+  .rb-about-page { padding: 26px 0 48px; }
+  .rb-about-layout { grid-template-columns: 1fr; }
+  .rb-about-hero { margin-bottom: 21px; }
+}
+@media (max-width: 460px) {
+  .rb-about-hero h1 { font-size: 32px; }
+  .rb-about-hero>p { font-size: 13px; }
+  .rb-about-letter { padding: 22px 18px; }
+  .rb-about-letter>p { font-size: 13px; }
+}

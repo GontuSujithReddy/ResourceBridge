@@ -1,0 +1,59 @@
+/* Reference sequence: photo tiles slide inward, then copy rises underneath.
+   Visibility is gated until the navigation overlay ends and each group is in view. */
+.rb-public-entry { overflow-x:clip }
+.rb-public-entry .rb-profile-photo {
+  animation:rb-public-photo-left 1500ms cubic-bezier(.16,1,.3,1) both;
+}
+.rb-public-entry .rb-profile-photo-from-right {
+  animation-name:rb-public-photo-right;
+}
+.rb-public-entry .rb-profile-copy {
+  animation:rb-public-copy-up 1100ms cubic-bezier(.16,1,.3,1) 1500ms both;
+}
+.rb-public-entry [data-public-reveal="profile"]:not([data-public-visible="true"]) :is(.rb-profile-photo,.rb-profile-copy) {
+  animation:none;opacity:0;
+}
+.rb-public-entry .rb-about-hero {
+  animation:rb-public-copy-up 1100ms cubic-bezier(.16,1,.3,1) both;
+}
+.rb-public-entry .rb-about-letter {
+  animation:rb-public-panel-left 1500ms cubic-bezier(.16,1,.3,1) both;
+}
+.rb-public-entry .rb-about-commitments {
+  animation:rb-public-panel-right 1500ms cubic-bezier(.16,1,.3,1) both;
+}
+.rb-public-entry :is(.rb-about-letter,.rb-about-commitments)>* {
+  animation:rb-public-copy-up 1100ms cubic-bezier(.16,1,.3,1) 1100ms both;
+}
+.rb-public-entry [data-public-reveal="panel"]:not([data-public-visible="true"]),
+.rb-public-entry [data-public-reveal="panel"]:not([data-public-visible="true"])>* {
+  animation:none;opacity:0;
+}
+@keyframes rb-public-photo-left {
+  from { opacity:0;transform:translate3d(-160px,0,0) scale(.94) rotate(-2deg) }
+  78% { opacity:1;transform:translate3d(5px,0,0) scale(1.01) rotate(.2deg) }
+  to { opacity:1;transform:none }
+}
+@keyframes rb-public-photo-right {
+  from { opacity:0;transform:translate3d(160px,0,0) scale(.94) rotate(2deg) }
+  78% { opacity:1;transform:translate3d(-5px,0,0) scale(1.01) rotate(-.2deg) }
+  to { opacity:1;transform:none }
+}
+@keyframes rb-public-copy-up {
+  from { opacity:0;transform:translate3d(0,34px,0) }
+  to { opacity:1;transform:none }
+}
+@keyframes rb-public-panel-left {
+  from { opacity:0;transform:translate3d(-100px,0,0) }
+  to { opacity:1;transform:none }
+}
+@keyframes rb-public-panel-right {
+  from { opacity:0;transform:translate3d(100px,0,0) }
+  to { opacity:1;transform:none }
+}
+@media(prefers-reduced-motion:reduce) {
+  .rb-public-entry :is(.rb-profile-photo,.rb-profile-copy,.rb-about-hero,.rb-about-letter,.rb-about-commitments),
+  .rb-public-entry :is(.rb-about-letter,.rb-about-commitments)>* {
+    animation:none!important;transform:none!important;filter:none!important;opacity:1!important;
+  }
+}
